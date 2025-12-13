@@ -5,6 +5,7 @@ const isDisabled = true;
   <button :disabled="isDisabled" class="btn">
     HAZME CLICK
   </button>
+  {{ isDisabled ? 'El botón esta Deshabilitado' : 'Habilitado' }}
 </template>
 
 <style scoped>
