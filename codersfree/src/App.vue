@@ -1,8 +1,8 @@
 <script setup>
-
+const msg = "Hola mundo";
 </script>
 <template>
-<h1>Hola Mundo</h1>
+<h1>{{ msg }}</h1>
 </template>
 
 <style scoped>
