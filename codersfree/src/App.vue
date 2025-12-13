@@ -1,14 +1,15 @@
 <script setup>
-const msg = "<h1>Hola mundo</h1>";
+const clase = "bg-red";
 
 </script>
 <template>
-<div v-html="msg"></div>
+<p :class="clase">Hola mundo</p>
 </template>
 
 <style scoped>
-h1 {
-    color:red;
+.bg-red {
+  background-color: pink;
+  padding: 8px;
 }
 </style>
 
