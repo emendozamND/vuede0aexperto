@@ -1,20 +1,15 @@
-<script >
-const msg = "Hola mundo";
-export default{
-    setup(){
-        const msg = 'Hola mundo';
-        return {
-            msg
-        }
-    }
-}
+<script setup>
+const msg = "<h1>Hola mundo</h1>";
+
 </script>
 <template>
-<h1>{{ msg }}</h1>
+<div v-html="msg"></div>
 </template>
 
 <style scoped>
-
+h1 {
+    color:red;
+}
 </style>
 
 
