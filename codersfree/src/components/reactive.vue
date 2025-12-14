@@ -1,24 +1,20 @@
 <script setup>
-import { reactive, computed } from "vue";
+import { reactive } from "vue";
 
+/* const count = ref(0); */
 const user = reactive({
-  name: "Elias",
-  apellido: "Mendoza",
-  edad: 16,
+  name: 'Elias',
+  apellido: 'Mendoza',
+  edad: 47,
 });
-
-const estado = computed(() => {
-  return user.edad >= 18 ? "Eres mayor de Edad" : "Eres menor de Edad";
-});
-
 const increment = () => {
   user.edad++;
-  console.log(user.edad);
+  console.log(count.value);
 };
 
 const decrement = () => {
   user.edad--;
-  console.log(user.edad);
+  console.log(count.value);
 };
 </script>
 
@@ -27,6 +23,12 @@ const decrement = () => {
     <button @click="decrement">-</button>
     <span>{{ user.edad }}</span>
     <button @click="increment">+</button>
-    <h1>{{ estado }}</h1>
   </div>
 </template>
+
+<style scoped>
+span{
+  padding: 0 10px;
+  font-size: 20px;
+}
+</style>
