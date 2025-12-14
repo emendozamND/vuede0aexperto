@@ -1,19 +1,19 @@
 <script setup>
-import { ref } from "vue";
+import { reactive } from "vue";
 
 /* const count = ref(0); */
-const user = ref({
+const user = reactive({
   name: 'Elias',
   apellido: 'Mendoza',
   edad: 47,
 });
 const increment = () => {
-  user.value.edad++;
+  user.edad++;
   console.log(count.value);
 };
 
 const decrement = () => {
-  user.value.edad--;
+  user.edad--;
   console.log(count.value);
 };
 </script>
