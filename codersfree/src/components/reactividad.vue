@@ -1,19 +1,15 @@
 <script setup>
 import { ref } from "vue";
 
-/* const count = ref(0); */
-const user = ref({
-  name: 'Elias',
-  apellido: 'Mendoza',
-  edad: 47,
-});
+const count = ref(0);
+
 const increment = () => {
-  user.value.edad++;
+  count.value++;
   console.log(count.value);
 };
 
 const decrement = () => {
-  user.value.edad--;
+  count.value--;
   console.log(count.value);
 };
 </script>
@@ -21,7 +17,7 @@ const decrement = () => {
 <template>
   <div>
     <button @click="decrement">-</button>
-    <span>{{ user.edad }}</span>
+    <span>{{ count }}</span>
     <button @click="increment">+</button>
   </div>
 </template>
@@ -32,3 +28,4 @@ span{
   font-size: 20px;
 }
 </style>
+
