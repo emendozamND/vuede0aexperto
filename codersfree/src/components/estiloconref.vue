@@ -7,16 +7,10 @@ const pintar = ref(false);
  <button @click="pintar = !pintar">
   Pintar
  </button>
- <h1 :class="[pintar ? 'bg-red' : 'bg-blue', 'text-white']">Hola mundo</h1>
+ <h1 :class="[pintar ? 'bg-red' : '']">Hola mundo</h1>
 </template>
 <style scoped>
 .bg-red{
   background-color:red;
-}
-.bg-blue{
-  background-color:blue;
-}
-.text-white{
-  color:white;
 }
 </style>
