@@ -1,0 +1,57 @@
+APP.Vue
+<script setup>
+import { ref } from "vue";
+import DetailCourse from "./components/DetailCourse.vue";
+
+const courses = [
+  { title: "Vue desde cero", professor: "Victor Arana", price: 10, description: "Aprende Vue desde cero y crea aplicaciones" },
+  { title: "Angular desde cero", professor: "Victor Arana", price: 10, description: "Aprende Angular desde cero y crea aplicaciones" },
+  { title: "React desde cero", professor: "Victor Arana", price: 10, description: "Aprende React desde cero y crea aplicaciones" }
+];
+
+const count = ref(5);
+
+function decrementCount(n) {
+  if (count.value - n >= 0) count.value -= n; // opcional: evitar negativos
+}
+</script>
+
+<template>
+  <input type="text" v-model.number="count" />
+
+  <DetailCourse
+    :courses="courses"
+    :count="count"
+    @decrement-count="decrementCount"
+  />
+</template>
+
+DetailCourse.vue
+
+<script setup>
+const props = defineProps({
+  courses: { type: Array, required: true },
+  count: { type: Number, default: 0 }
+});
+
+const emit = defineEmits(["decrementCount"]);
+
+function buttonClick() {
+  emit("decrementCount", 2);
+}
+</script>
+
+<template>
+  <div>
+    <div v-for="(c, i) in props.courses" :key="i">
+      <h1>{{ c.title }} ({{ props.count }})</h1>
+      <p>{{ c.professor }}</p>
+      <p>{{ c.price }}</p>
+      <p>{{ c.description }}</p>
+    </div>
+
+    <button @click="buttonClick">
+      Hazme click
+    </button>
+  </div>
+</template>

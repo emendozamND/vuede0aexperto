@@ -9,13 +9,6 @@ const courses = [
 ];
 
 const count = ref(5);
-function decrementCount(n){
-  count.value -= n;
-}
-
-const decrement = () => {
-  if (count.value > 0) count.value--;
-};
 </script>
 
 <template>
@@ -23,7 +16,7 @@ const decrement = () => {
 
   <DetailCourse
     :courses="courses"
-    :count="count"
-    @decrement-count="decrementCount"
+    v-model="count"
+    
   />
 </template>
