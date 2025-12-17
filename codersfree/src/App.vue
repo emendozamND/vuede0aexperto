@@ -1,52 +1,17 @@
 <script setup>
-  import {ref} from 'vue';
-  const name = ref('');
-  const numero = ref(1);
-  const paises = ref([]);
-  const cities = ref('');
-
+  import DetailCourse from './components/DetailCourse.vue';
+ const courses = [
+  { title: "Vue desde cero", professor: "Victor Arana", price: 10, description: "Aprende Vue desde cero y crea aplicaciones" },
+  { title: "Angular desde cero", professor: "Victor Arana", price: 10, description: "Aprende Angular desde cero y crea aplicaciones" },
+  { title: "React desde cero", professor: "Victor Arana", price: 10, description: "Aprende React desde cero y crea aplicaciones" }
+];
 </script>
 
 <template>
- <p><textarea name="" id="" v-model="name"></textarea>  </p>
- {{ name }}
- <div>
-
-  <input type = "checkbox" v-model="isChecked" />
-  {{ isChecked  ? 'Checked' : 'unchecked' }} 
- <p> <input v-model="numero" type="radio" value = 1 name="numero" />
-  Uno </p>
-  <p> <input v-model="numero" type="radio"  value = 2 name="numero"/>
-  Dos </p>
-   <p> <input v-model="numero" type="radio" value = 3 name="numero"/>
-  Tres </p>
-
-{{ numero }}
- </div>
- <div>
-
+  <DetailCourse :courses="courses" prueba="hola mundo"/>
   
-  {{ isChecked  ? 'Checked' : 'unchecked' }} 
- <p> <input v-model="paises" type="checkbox" value = "chile" name="paises[]" />
-  Chile</p>
-  <p> <input v-model="paises" type="checkbox"  value = "argentina" name="paises[]"/>
-  Argentina </p>
-   <p> <input v-model="paises" type="checkbox" value = "méxico" name="paises[]"/>
-  México </p>
-
-{{ paises }}
-<p>
-<select v-model="cities">
-  <option value="">Señeccione una Ciudad</option>
-  <option value="New York">New York</option>
-  <option value="Mexico city">Mexico city</option>
-  <option value="Otawa">Otawa</option>
-  </select>
-  </p>
- </div>
-<p>{{ cities }}</p>
- 
 </template>
+
 <style scoped>
 
 </style>
