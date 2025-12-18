@@ -2,10 +2,7 @@
 import { computed } from "vue";
 
 const props = defineProps({
-  type: {
-    type: String,
-    default: "info",
-  },
+  type: { type: String, default: "info" },
 });
 
 const alertColors = {
@@ -21,7 +18,14 @@ const alertColor = computed(() => alertColors[props.type] ?? alertColors.info);
 
 <template>
   <div :class="alertColor" role="alert">
-    <span class="font-medium">Info alert!</span>
-    Change a few things up and try submitting again.
+    <!-- Título: si no mandan slot title, cae al texto por defecto -->
+    <span class="font-medium">
+      <slot name="title">Info</slot>
+    </span>
+
+    <!-- Contenido -->
+    <div>
+      <slot>Contenido de respaldo</slot>
+    </div>
   </div>
 </template>
