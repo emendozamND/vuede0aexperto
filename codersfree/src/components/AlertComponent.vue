@@ -1,0 +1,27 @@
+<script setup>
+import { computed } from "vue";
+
+const props = defineProps({
+  type: {
+    type: String,
+    default: "info",
+  },
+});
+
+const alertColors = {
+  info: "text-blue-800 bg-blue-50",
+  danger: "text-red-800 bg-red-50",
+  success: "text-green-800 bg-green-50",
+  warning: "text-yellow-800 bg-yellow-50",
+  dark: "text-gray-800 bg-gray-50",
+};
+
+const alertColor = computed(() => alertColors[props.type] ?? alertColors.info);
+</script>
+
+<template>
+  <div :class="alertColor" role="alert">
+    <span class="font-medium">Info alert!</span>
+    Change a few things up and try submitting again.
+  </div>
+</template>
