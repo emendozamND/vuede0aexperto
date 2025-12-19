@@ -4,7 +4,7 @@ import { computed } from "vue";
 
 const route = useRoute();
 
-const courseId = computed(() => String(route.params.courseId ?? ""));
+const courses = computed(() => String(route.params.courses ?? ""));
 
 // Opcional: para verificar
 console.log("params:", route.params);
@@ -13,7 +13,7 @@ console.log("params:", route.params);
 <template>
   <div class="about">
     <h1>Esta es la página de Cursos</h1>
-    <h2>Bienvenido al curso: {{ courseId }}</h2>
+    <h2>Bienvenido al curso: {{ courses }}</h2>
   </div>
 </template>
 

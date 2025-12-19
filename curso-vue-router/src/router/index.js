@@ -13,7 +13,7 @@ const router = createRouter({
     },
     // /courses/1
     {
-      path: '/courses/:courseId',
+      path: '/courses/:courses(\\d+)+',
       component: () => import('../views/CourseShowView.vue'),
     },
     {
