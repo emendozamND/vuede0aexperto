@@ -1,13 +1,11 @@
 <script setup>
-import AlertComponent from "./components/AlertComponent.vue";
+import OneComponent from "./components/OneComponent.vue";
 </script>
 
 <template>
-  <AlertComponent type="info">
-    <template #title>
-      Hola 
-    </template>
-
-Change a few things up and try submitting again.
-    </AlertComponent>
+      <OneComponent/>   
 </template>
+
+<style scoped>
+
+</style>

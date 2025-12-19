@@ -1,0 +1,45 @@
+app.vue
+<script setup>
+import AlertComponent from "./components/AlertComponent.vue";
+</script>
+
+<template>
+  <AlertComponent type="info">
+    <template #title>
+      Hola 
+    </template>
+
+Change a few things up and try submitting again.
+    </AlertComponent>
+</template>
+<script setup>
+import { computed } from "vue";
+
+const props = defineProps({
+  type: { type: String, default: "info" },
+});
+
+const alertColors = {
+  info: "text-blue-800 bg-blue-50",
+  danger: "text-red-800 bg-red-50",
+  success: "text-green-800 bg-green-50",
+  warning: "text-yellow-800 bg-yellow-50",
+  dark: "text-gray-800 bg-gray-50",
+};
+
+const alertColor = computed(() => alertColors[props.type] ?? alertColors.info);
+</script>
+
+<template>
+  <div :class="alertColor" role="alert">
+    <!-- Título: si no mandan slot title, cae al texto por defecto -->
+    <span class="font-medium">
+      <slot name="title">Info</slot>
+    </span>
+
+    <!-- Contenido -->
+    <div>
+      <slot>Contenido de respaldo</slot>
+    </div>
+  </div>
+</template>
