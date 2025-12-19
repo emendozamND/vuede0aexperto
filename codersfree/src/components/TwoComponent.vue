@@ -1,21 +1,17 @@
 <script setup>
 import ThreeComponent from "./ThreeComponent.vue";
+import { inject, ref } from "vue";   
 
-const props = defineProps({
-  nombre: {
-    type: String,
-    default: "",
-  },
-});
+const nombre = inject("nombre", ref("")); 
 </script>
 
 <template>
   <div class="bg-blue-500 p-8">
     <p class="text-2xl">Hola desde el componente 2</p>
 
-    <p>{{ props.nombre }}</p>
+    <p>{{ nombre.value }}</p>
 
-    <ThreeComponent :nombre="props.nombre" />
+    <ThreeComponent />
   </div>
 </template>
 
